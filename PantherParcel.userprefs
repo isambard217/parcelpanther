@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{A5C6906B-6690-444E-A3AE-E84D10FC3073}|Default">
+  <MonoDevelop.Ide.ItemProperties.PantherParcel PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PantherParcel/PantherParcel.csproj">
+    <Files>
+      <File FileName="PantherParcel/tables.txt" Line="53" Column="1" />
+      <File FileName="PantherParcel/Controllers/BaseController.cs" Line="6" Column="18" />
+      <File FileName="PantherParcel/Controllers/HomeController.cs" Line="99" Column="60" />
+      <File FileName="PantherParcel/Views/Home/Index.cshtml" Line="129" Column="63" />
+      <File FileName="PantherParcel/Views/Shared/_Layout.cshtml" Line="140" Column="12" />
+      <File FileName="PantherParcel/Database/DataManager.cs" Line="67" Column="50" />
+      <File FileName="PantherParcel/Views/Home/Booking.cshtml" Line="11" Column="16" />
+      <File FileName="PantherParcel/Models/Error.cs" Line="12" Column="42" />
+      <File FileName="PantherParcel/Startup.cs" Line="28" Column="1" />
+      <File FileName="PantherParcel/Views/Home/Contact.cshtml" Line="11" Column="2" />
+      <File FileName="PantherParcel/Views/_ViewStart.cshtml" Line="2" Column="46" />
+      <File FileName="PantherParcel/Views/Home/About.cshtml" Line="12" Column="55" />
+      <File FileName="PantherParcel/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="PantherParcel/appsettings.json" Line="12" Column="185" />
+      <File FileName="PantherParcel/PantherParcel.csproj" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="PantherParcel/Database/DataManager.cs" line="53" offsetX="421" offsetY="832" expression="e.Message" liveUpdate="True" />
+    <Watch file="PantherParcel/Database/DataManager.cs" line="53" offsetX="421" offsetY="832" expression="e.Message" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+</Properties>

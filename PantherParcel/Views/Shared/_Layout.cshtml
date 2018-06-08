@@ -1,0 +1,426 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+@model PantherParcel.Models.ParcelDetails;
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="narrow-jumbotron.css" rel="stylesheet">
+        
+        <style>
+            .hideError{
+
+                visibility:hidden;
+                color:red;
+            }
+        </style>
+
+        <style>
+            /* Space out content a bit */
+            body {
+              padding-top: 1.5rem;
+              padding-bottom: 1.5rem;
+            }
+
+            /* Everything but the jumbotron gets side spacing for mobile first views */
+            .header,
+            .marketing,
+            .footer {
+              padding-right: 1rem;
+              padding-left: 1rem;
+            }
+
+            /* Custom page header */
+            .header {
+              padding-bottom: 1rem;
+              border-bottom: .05rem solid #e5e5e5;
+            }
+            /* Make the masthead heading the same height as the navigation */
+            .header h3 {
+              margin-top: 0;
+              margin-bottom: 0;
+              line-height: 3rem;
+            }
+
+            /* Custom page footer */
+            .footer {
+              padding-top: 1.5rem;
+              color: #777;
+              border-top: .05rem solid #e5e5e5;
+            }
+
+            /* Customize container 
+            @@media (min-width: 48em) {
+              .container {
+                max-width: 46rem;
+              }
+            }*/
+            .container-narrow > hr {
+              margin: 2rem 0;
+            }
+
+            /* Main marketing message and sign up button */
+            .jumbotron {
+              text-align: center;
+              border-bottom: .05rem solid #e5e5e5;
+            }
+            .jumbotron .btn {
+              padding: .75rem 1.5rem;
+              font-size: 1.5rem;
+            }
+
+            /* Supporting marketing content */
+            .marketing {
+              margin: 3rem 0;
+            }
+            .marketing p + h4 {
+              margin-top: 1.5rem;
+            }
+
+            /* Responsive: Portrait tablets and up 
+            @@media screen and (min-width: 48em) {
+              Remove the padding we set earlier 
+              .header,
+              .marketing,
+              .footer {
+                padding-right: 0;
+                padding-left: 0;
+              }
+               Space out the masthead 
+              .header {
+                margin-bottom: 2rem;
+              }
+              Remove the bottom border on the jumbotron for visual effect 
+              .jumbotron {
+                border-bottom: 0;
+              }
+            }*/
+        </style>        
+
+        
+        
+    </head>
+    
+    <body style="background-image: url('https://cdn.parcelbroker.co.uk/images/home-bg.jpg'); background-size:cover; background-repeat: no-repeat;">
+
+    <div class="container">
+  
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-default">
+
+                  <div class="navbar-header">
+                    <h2 class="navbar-brand"> Parcel Polo </h2>
+                  </div>
+                  <ul class="nav nav-pills float-right">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Home/About">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/Home/Contact">Contact</a>
+                    </li>
+                  </ul>
+                
+                
+        </nav>
+
+            
+        
+        <div style="background:white; padding:0; margin:0; border: 2px solid red;">
+
+           
+
+                @RenderBody()
+                
+            <!-- don't share -->
+        
+                
+        </div>
+
+        </div>      
+
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            
+            $(document).ready(function() {
+
+                $('#BookingConfirmation').hide();
+
+                var formGood = false;
+            
+                var frm = $('#submitForm');
+
+                frm.submit(function (e) {
+
+                    $('formSubmitButton').prop('disabled', true);
+                    
+                     e.preventDefault();
+
+                     var fromCountry = $('#fromCountry').val();
+                     var fromAddress =  $('#fromAddress').val();
+
+                     var toCountry = $('#toCountry').val();
+                     var toAddress = $('#toAddress').val();   
+
+                     var contactNumber = $('#contactNumber').val();
+
+                     var parcelQuantity = $('#parcelQuantity').val();
+                     var parcelDescription = $('#parcelDescription').val();     
+
+                     var parcelEntryCount = $("#AllParcels").find('[class^=parcelEntry]').length;
+
+                     var currentParcel;
+                     var currentParcelLength;
+                     var currentParcelWidth;
+                     var currentParcelHeight;
+                     var currentParcelWeight;
+
+                     var AllParcels = [];
+            
+                     for (var i = 0; i<parcelEntryCount; i++) {
+
+                        var entry;
+
+                        console.log("The number of parcels is " + i);
+            
+                        if (i === 0 ) {
+            
+                            currentParcel = $("div.parcelEntry");
+
+                            currentParcelLength = currentParcel.find("input[name=Length]").val();
+
+                            currentParcelWidth = currentParcel.find("input[name=Width]").val();
+
+                            currentParcelHeight = currentParcel.find("input[name=Height]").val();
+
+                            currentParcelWeight = currentParcel.find("input[name=Weight]").val();
+            
+                        } else {
+                
+                            currentParcel = $("div.parcelEntry" + i);
+
+                            currentParcelLength = currentParcel.find("input[name=Length]").val();
+
+                            currentParcelWidth = currentParcel.find("input[name=Width]").val();
+
+                            currentParcelHeight = currentParcel.find("input[name=Height]").val();
+
+                            currentParcelWeight = currentParcel.find("input[name=Weight]").val();
+
+                        }
+
+                        entry = { 
+                                   
+                                    length: currentParcelLength,
+                                    width: currentParcelWidth,
+                                    height: currentParcelHeight,
+                                    weight: currentParcelWeight
+                                }
+
+            
+                        AllParcels.push(entry);
+                        
+                     }
+
+                     <!-- Validation -->
+
+                     var isValid = false;
+            
+                     if (fromCountry == '' || fromAddress == '' || toCountry == '' || toAddress == '' || contactNumber == '' || parcelQuantity == '' || parcelDescription == '') {
+
+                            if (parcelQuantity == '') {
+
+                                $('#errorParcelQuantity').css('visibility', 'visible');
+                                isValid = false;
+            
+                            } else {
+            
+                               $('#errorParcelQuantity').css('visibility', 'hidden');
+                                isValid = true;
+                            }
+
+                            if (parcelDescription == '') {
+
+                                $('#errorParcelDescription').css('visibility', 'visible');
+                                isValid = false;    
+                            } else {
+
+                                $('#errorParcelDescription').css('visibility', 'hidden');
+                                isValid = true;
+                            }
+            
+                            if (contactNumber == '') {
+            
+                                $('#errorContactNumber').css('visibility', 'visible');
+                                isValid = false;
+                            } else {
+
+                                $('#errorContactNumber').css('visibility', 'hidden');
+                                isValid=true;
+
+                            }
+
+                            if (fromCountry == '') {
+
+                                $('#errorFromCountry').css('visibility', 'visible');
+                                isValid = false;
+                            } else {
+            
+                                 $('#errorFromCountry').css('visibility', 'hidden');
+                                 isValid = true;
+                            }
+
+                            if (fromAddress == '') {
+            
+                                $('#errorFromAddress').css('visibility', 'visible');
+                                isValid = false;
+                            } else {
+
+                                $('#errorFromAddress').css('visibility', 'hidden');
+                                isValid = true;
+                            }
+
+            
+                            if (toCountry == '') {
+
+                                $('#errorToCountry').css('visibility', 'visible');
+                                isValid = false;
+                            } else {
+            
+                                 $('#errorToCountry').css('visibility', 'hidden');
+                                  isValid = true;
+                            }
+
+                            if (toAddress == '') {
+
+                                $('#errorToAddress').css('visibility', 'visible');
+                                isValid = false;
+                            } else {
+                
+                                $('#errorToAddress').css('visibility', 'hidden');
+                                isValid = true;
+                            }  
+            
+                     } else {
+            
+                            isValid = true;   
+                     } 
+                              
+                     var data0 = { fromCountry: fromCountry, fromAddress: fromAddress, toCountry: toCountry, toAddress: toAddress, parcelQuantity: parcelQuantity, parcelDescription: parcelDescription, AllParcels: AllParcels, contactNumber: contactNumber };             
+                              
+                     var myJson = JSON.stringify(data0);
+                            
+                     <!-- DO AJAX if -->
+                     if (isValid == true) {
+
+                        $.ajax({
+            
+                            type: "POST",
+                            url: '/Home/ParcelEnquiry',
+                            data: myJson,
+                            contentType: "application/json; charset=utf-8",
+                            dataType: 'json',
+            
+                            success: function(msg) {
+
+                                console.log("back from ajax yes");
+
+
+                                $('#HideForm').hide();         
+                                $('#BookingConfirmation').show();
+            
+                            }
+                            
+                                
+                
+
+                        });
+                        
+                     }
+            
+                });
+
+
+                    
+            
+                   
+                $("#addButton").on('click', function(event) {
+                
+                    event.preventDefault();
+                    
+                    var parcelEntryCount = $("#AllParcels").find('[class^=parcelEntry]').length;
+                    
+                    console.log(parcelEntryCount);
+            
+                    $("#addButton").before(`
+                       <div class="parcelEntry${parcelEntryCount}"> 
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <p> Length: </p>
+                                <input type="number" name="Length" id="Length"/>
+                            </div>
+
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <p> Width: </p>
+                                <input type="number" name="Width" id="Width"/>
+                            </div>
+
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <p> Height: </p>
+                                <input type="number" name="Height" id="Height"/> 
+                            </div>
+
+                            <div class="col-sm-3 col-md-3 col-lg-3">
+                                <p> Weight: </p>
+                                <input type="number" name="Weight" id="Weight"/>
+                            </div>
+            
+                            <button type="button" class="remove" id="${parcelEntryCount}"> Remove </p>                     
+                           
+                       </div>
+            
+                       <div></div>
+            
+                    `);
+                    
+                }); 
+
+                <!-- #AllParcels exists in the dom .remove does not -->
+                $("#AllParcels").on('click', '.remove', function() {
+
+                    var id = $(this).attr('id');
+
+                    var theParcelIs = "parcelEntry" + id;
+
+                    $("#AllParcels").find(theParcelIs).remove();
+
+                    $(this).parent('div').remove();
+
+                    console.log("Remove Parcel");
+                           
+            
+                });
+
+              
+               
+            });
+            
+        </script>
+
+    </body> 
+<html>

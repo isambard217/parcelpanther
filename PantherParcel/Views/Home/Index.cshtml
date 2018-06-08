@@ -1,0 +1,136 @@
+﻿<!-- Don't share -->
+            <div class="jumbotron"> 
+        
+                <h2 class="display-3"> NationWide delivery </h2>
+                <h1 class="vertical-centre"> Import and Export parcels to the UK. </h1> 
+              
+                <p>
+                    Please fill out the form below and one of our support team can get back to you with a quote.
+                </p>
+
+                <strong>
+                    <p>Please note that we focus solely on exports and imports to and from the UK. 
+                    On the form below can you please specify either the To or From location to be a place in the UK.</p>
+                </strong>   
+                    
+            </div>
+
+
+
+            <div class="container-fluid" style="align-self:center; margin:auto;">   
+              <div class="row"> 
+                        
+                <div class="col-sm-8 col-sm-offset-4" > 
+
+                        <div id="BookingConfirmation"> 
+
+                            <h1> Thank you </h1>
+                                
+                            <h3>    
+                                Booking made our team will get back to you within 30 minutes.
+                            </h3>
+                        </div>
+                        
+                        <div id="HideForm">
+  <!-- start of Form--><form action="/Home/ParcelEnquiry" method="post" id="submitForm">
+
+                        <div class="form-group">    
+                                
+                            <h4> From: </h4>
+                            <input type="text" id="fromCountry" name="fromCountry" placeholder="country">
+                            <p class="hideError" id="errorFromCountry"> Please enter a country </p> 
+                                
+                            <input type="text" id="fromAddress" name="fromAddress" placeholder="address - postcode "/>
+                            <p class="hideError" id="errorFromAddress"> Please enter an address</p> 
+                            
+                            <h4> To: </h4>
+                            <input type="text" id="toCountry" name="toCountry" placeholder="country" />
+                            <p class="hideError" id="errorToCountry">Please enter a Country</p> 
+                                
+                            <input type="text" id="toAddress" name="toAddress" placeholder="address - postcode"/>
+                                
+                            <p class="hideError" id="errorToAddress"> Please enter an address </p>
+                    
+                        </div>
+
+                        <div>
+                            <h4>Contact number: </h4>
+
+                            <input type="number" id="contactNumber" name="contactNumber" placeholder="contact number"/>
+
+                            <p class="hideError" id="errorContactNumber"> Please enter your contact number </p> 
+                        </div>      
+                            
+                        <h4>Number of Parcels: </h4>
+                        <input type="text" name="parcelQuantity" id="parcelQuantity" placeholder="parcel quantity"/>
+
+                        <p class="hideError" id="errorParcelQuantity"> Please enter the number of Parcels you have </p>
+                            
+                            
+                        <h4>Description of the Parcel Contents: </h4>
+                        <textarea name="parcelDescription" id="parcelDescription" rows="4" cols="50"></textarea>
+
+                        <p class="hideError" id="errorParcelDescription"> Please enter a description of your parcels </p>
+
+                            
+                        <p class="hideError"> Enter a Parcel Description e.g. personal items </p>
+                            
+                
+                        <h4> Please provide the demensions of all your parcels below: </h4>
+
+                        <p class="hideError"> Please fill out the dimensions of all your parcels. For each parcel you wish to send
+                        make a row and fill out it's Height, Width and Length and Weight'</p>
+                            
+                            
+                        <div id="AllParcels" class="row">
+                           <div class="parcelEntry"> 
+                                <div class="col-sm-3 col-md-3 col-lg-3">
+                                    <p> Length (cm): </p>
+                                    <input type="number" name="Length"/>
+                                </div>
+
+                                <div class="col-sm-3 col-md-3 col-lg-3">
+                                    <p> Width (cm): </p>
+                                    <input type="number" name="Width"/>
+                                </div>
+
+                                <div class="col-sm-3 col-md-3 col-lg-3">
+                                    <p> Height (cm): </p>
+                                    <input type="number" name="Height" /> 
+                                </div>
+
+                                <div class="col-sm-3 col-md-3 col-lg-3">
+                                    <p> Weight (kg): </p>
+                                    <input type="number" name="Weight" />
+                                </div> 
+                            </div>
+
+
+                            <br />
+                            <br />  
+                            <button id="addButton" type="button"> Add a Parcel </button>
+
+                                
+                        </div>
+                            
+                        <br />
+                        <br />
+                 
+                        <div class="form-group">
+                            <input type="submit" text="submit" id="formSubmitButton"/>
+                        </div>      
+
+                                    
+<!-- End of form-->
+                </form>
+                </div>          
+               </div>
+
+                        <footer class="footer"> © Company 2018 </footer>
+
+                        
+                </div> <!-- row -->
+            </div>  <!-- container fluid -->
+
+
+		

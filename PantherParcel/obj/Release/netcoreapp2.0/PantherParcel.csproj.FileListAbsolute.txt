@@ -1,0 +1,10 @@
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/bin/Release/netcoreapp2.0/PantherParcel.deps.json
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/bin/Release/netcoreapp2.0/PantherParcel.runtimeconfig.json
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/bin/Release/netcoreapp2.0/PantherParcel.runtimeconfig.dev.json
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/bin/Release/netcoreapp2.0/PantherParcel.dll
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/bin/Release/netcoreapp2.0/PantherParcel.pdb
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/obj/Release/netcoreapp2.0/PantherParcel.csproj.CoreCompileInputs.cache
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/obj/Release/netcoreapp2.0/PantherParcel.AssemblyInfoInputs.cache
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/obj/Release/netcoreapp2.0/PantherParcel.AssemblyInfo.cs
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/obj/Release/netcoreapp2.0/PantherParcel.dll
+/Users/isambardwheeler-artwell/Projects/PantherParcel/PantherParcel/obj/Release/netcoreapp2.0/PantherParcel.pdb

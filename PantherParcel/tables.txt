@@ -1,0 +1,53 @@
+﻿DROP TABLE IF EXISTS `ParcelEnquiries`;
+
+CREATE TABLE `ParcelEnquiries` (
+    `Id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `FromCountry` VARCHAR(100) NULL DEFAULT NULL,
+    `FromAddress` VARCHAR(100) NULL DEFAULT NULL,
+    `ToCountry` VARCHAR(100) NULL DEFAULT NULL,  
+    `ToAddress` VARCHAR(100) NULL DEFAULT NULL,
+    `Phone` VARCHAR (50) NULL DEFAULT NULL,
+    `NumberOfParcels` VARCHAR(50) NULL DEFAULT NULL,
+    `ParcelDescription` VARCHAR (250) NULL DEFAULT NULL,
+    `CreateDateTime` DATETIME NOT NULL DEFAULT NULL
+    PRIMARY KEY (`Id`)
+              
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1;
+
+
+
+DROP TABLE IF EXISTS `Parcels`;
+
+CREATE TABLE `Parcels` (
+    `Id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `Length` VARCHAR(50) NULL DEFAULT NULL,
+    `Width` VARCHAR(50) NULL DEFAULT NULL,
+    `Height` VARCHAR(50) NULL DEFAULT NULL,
+    `Weight` VARCHAR(50) NULL DEFAULT NULL,
+    `ParcelEnquiriesId` INT(11) NULL DEFAULT NULL COMMENT 'foreign key to ParcelEnquiries.ID',
+    PRIMARY KEY (`Id`),
+    INDEX `ParcelEnquiriesId` (`ParcelEnquiriesId`)
+)
+COLLATE=`utf8_general_ci`
+ENGINE=InnoDB
+AUTO_INCREMENT=1;
+
+
+
+DROP TABLE IF EXISTS `Errors`;
+
+CREATE TABLE `Errors` (
+    `Id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `Message` VARCHAR(250) NULL DEFAULT NULL,
+    `Class` VARCHAR(250) NULL DEFAULT NULL,
+    `Method` VARCHAR(250) NULL DEFAULT NULL,
+    `CreateDateTime` DATETIME NOT NULL,
+     PRIMARY KEY (`Id`)
+)
+COLLATE=`utf8_general_ci`
+ENGINE=InnoDB
+AUTO_INCREMENT=1;
+
